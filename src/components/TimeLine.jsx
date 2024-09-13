@@ -7,7 +7,7 @@ let date = {textColor: 'blue'};
 
 function TimeLine() {
     return(
-        <VerticalTimeline>
+        <VerticalTimeline className='snap'>
         <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}

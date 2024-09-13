@@ -21,9 +21,18 @@ const handleOpenNavMenu = (event) => {
 const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  
     return(
-        <Box sx={{background: 'transparent', color: 'white', position:'sticky'}}>
+        <Box
+            sx={{
+                background: 'transparent',
+                color: 'white',
+                position: 'fixed',
+                width: '100%',
+                top: '0',
+                zIndex: '1000',
+            }}
+        >
             <StyledToolbar>
                 <Typography variant="h6">ReidXtreme</Typography>
                 <Box sx={{display:{xs:'none', sm:'flex'}}}>

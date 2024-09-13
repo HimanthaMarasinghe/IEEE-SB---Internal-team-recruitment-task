@@ -5,7 +5,7 @@ function HeroSection() {
 
 
     return(
-        <Box sx={{height:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', color:'white', zIndex:'2'}}>
+        <Box className="snap" sx={{height:'90vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'space-evenly',  color:'white'}}>
             <img src="images/logo.png" alt="logo" sx={{zIndex:'2'}} />
             <Typography>A premier competitive programming hackathon by the IEEE and ACM Student Chapters of UCSC</Typography>
         </Box>
