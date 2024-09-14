@@ -8,23 +8,42 @@ export default function PrizeCard(props) {
 
     let text = "";
     let borderColor = "";
+    let order = "";
 
     switch(props.place) {
         case "1":
             text = "First";
             borderColor = "gold";
+            order = "1";
             break;
         case "2":
             text = "Second";
             borderColor = "silver";
+            order = "2";
             break;
         case "3":
             text = "Third";
             borderColor = "brown";
+            order = "3";
     }
 
   return (
-    <Card sx={{width:300, height:450, background:'black', border: `solid ${borderColor}`, padding: 1, borderRadius: 5, color: 'white', textAlign: 'center'}}>
+    <Card sx={{
+      width: 300,
+      height: 450,
+      background: 'black',
+      border: `solid ${borderColor}`,
+      padding: 1,
+      borderRadius: 5,
+      color: 'white',
+      textAlign: 'center',
+      order: { xs: `${order}`, lg: 'unset' },
+      transition: 'transform 0.5s, box-shadow 0.5s',
+      '&:hover': {
+        transform: 'scale(1.1)',
+        boxShadow: `0 0 4px 6px ${borderColor}`
+      }
+    }}>    
       <CardMedia
         sx={{ height: 300 }}
         image={"images/" + props.place + ".png"}

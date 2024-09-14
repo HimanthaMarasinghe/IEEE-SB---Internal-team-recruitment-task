@@ -1,21 +1,18 @@
 body {
   margin: 0;
-  /* height: min-content; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url("../public/images/background.jpg"), #00000086; */
   background-image: 
-    url("../public/images/background.jpg"), /* Background image */
+    url("../public/images/background.jpg"),
     radial-gradient(rgb(0, 0, 0), rgba(49, 0, 0, 0));
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-blend-mode: overlay; 
-  /* background: radial-gradient(#76000000, #000000ff); */
-  /* background: #00000000; */
+  background-blend-mode: overlay;
+  background-position: 60% 0;
 }
 
 code {
@@ -23,25 +20,39 @@ code {
   monospace;
 }
 
-/* styles.css */
-.custom-date-color {
-  color: rgb(255, 255, 255); /* Change 'red' to your desired color */
-}
-
 .App{
-  scroll-snap-type: y mandatory; /* Enable snap scrolling */
-  overflow-y: scroll; /* Enable vertical scrolling */
+  overflow-y: scroll; 
   scroll-behavior: smooth; 
-  height: 90vh; /* Full viewport height */
-  margin-top: 10vh;
+  height: calc(100vh - 50px);
+  margin-top: 50px;
   scrollbar-width: none;
-}
-
-.snap{
-  scroll-snap-align: start; /* Snap to the start of the container */
 }
 
 #tsparticles{
   position: relative;
   z-index: -1;
+}
+
+.css-99wn1p-MuiList-root-MuiMenu-list{
+  background-color: black;
+}
+
+.css-e9tnlh-MuiButtonBase-root-MuiMenuItem-root:hover{
+  color: gold;
+}
+
+.vertical-timeline-element-content{
+  transition: box-shadow 0.3s ease-in-out;
+  
+  &:hover{
+  box-shadow: 0 0 4px 6px gold !important;
+}}
+
+.vertical-timeline::before{
+  background:gold !important;
+}
+
+.vertical-timeline-element-icon{
+  box-shadow: 0 0 0 4px gold !important;
+  background: rgb(0, 0, 0) !important;
 }

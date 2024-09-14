@@ -1,8 +1,8 @@
-import { AppBar, Box, Button, IconButton, Menu, MenuItem, styled, Toolbar, Typography } from "@mui/material";
+import { Box, Button, IconButton, Menu, MenuItem, styled, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import React from "react";
 
-const sections = ['Home', 'Time Line', 'Prices'];
+const sections = ['Home', 'Introduction', 'Time Line', 'Prices', 'QnA'];
 
 const StyledToolbar = styled(Toolbar)({
     display: "flex",
@@ -34,10 +34,18 @@ const handleCloseNavMenu = () => {
             }}
         >
             <StyledToolbar>
-                <Typography variant="h6">ReidXtreme</Typography>
+                <Typography variant="h6" sx={{color:'gold'}}>ReidXtreme 4.0</Typography>
                 <Box sx={{display:{xs:'none', sm:'flex'}}}>
                     {sections.map((section) =>(
-                        <Button key={section} sx={{my:2, color: 'white', display: 'block'}}>{section}</Button>
+                        <Button 
+                            onClick={(e) => {
+                                e.preventDefault(); // Prevent default anchor behavior (like page reloading)
+                                document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+                            }} 
+                            key={section} 
+                            sx={{my:2, color: 'white', display: 'block', transition:'color 0.2s', '&:hover':{color:'gold'}}}>
+                            {section}
+                        </Button>
                     ))}
                 </Box>
                 <Box sx={{display:{xs:'block', sm:'none'}}}>
@@ -47,7 +55,7 @@ const handleCloseNavMenu = () => {
                     aria-controls="menu-appbar"
                     aria-haspopup="true"
                     onClick={handleOpenNavMenu}
-                    color="inherit"
+                    sx={{color:'gold'}}
                     >
                     <MenuIcon />
                     </IconButton>
@@ -67,7 +75,18 @@ const handleCloseNavMenu = () => {
                         onClose={handleCloseNavMenu}
                         >
                         {sections.map((page) => (
-                            <MenuItem key={page} onClick={handleCloseNavMenu}>
+                            <MenuItem 
+                                key={page}
+                                sx={{
+                                    background: 'black',
+                                    color: 'white',
+
+                                    }}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document.getElementById(page).scrollIntoView({ behavior: 'smooth' });
+                                    handleCloseNavMenu();
+                                }}>
                             <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                             </MenuItem>
                         ))}
