@@ -1,3 +1,14 @@
+Name             - M. A. H. K. Marasinghe                            \
+Email            - himanthamarasinghe@gmail.com                      \
+Registration no. - 2022/IS/058
+
+# Frameworks and Libraries that I have used in this project.
+
+- React
+- MUI
+- tsparticles
+- react-vertical-timeline-component
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
